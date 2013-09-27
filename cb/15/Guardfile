@@ -1,4 +1,5 @@
 guard :rspec, :cli => "--color --format doc" do
-  watch(%r{^spec/.+_spec\.rb$})
+  watch(%r{^bin/(.+)$})
+  watch(%r{^spec/.+_spec\.rb$})          { |m| "spec/codebreaker/game_spec.rb" }
   watch( 'lib/codebreaker/game.rb' )     { |m| "spec/codebreaker/game_spec.rb" }
 end
