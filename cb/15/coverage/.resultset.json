@@ -1,0 +1,24 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/shige/projects/rspec/cb/15/lib/codebreaker.rb": [
+        1
+      ],
+      "/Users/shige/projects/rspec/cb/15/lib/codebreaker/game.rb": [
+        1,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1380269133
+  }
+}
