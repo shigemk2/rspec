@@ -18,10 +18,10 @@ module Codebreaker
           number_match_count += 1
         end
       end
-      @output.puts '+'*exact_match_count + '-'*number_match_count
+      @output.puts '+'*exact_match_count(guess) + '-'*number_match_count
     end
 
-    def exact_match_count
+    def exact_match_count(guess)
       exact_match_count = 0
       (0..3).each do |index|
         if exact_match?(guess, index)
