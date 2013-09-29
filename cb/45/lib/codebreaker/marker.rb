@@ -22,4 +22,19 @@ class Marker
   def number_match?(index)
     @secret.include?(@guess[index]) && !exact_match?(index)
   end
+
+  def number_match_count
+    total_match_count - exact_match_count
+  end
+
+  def total_match_count
+    count = 0
+    @guess.map do |n|
+      if @secret.include?(n)
+        @secret.delete_at(@secret.index(n))
+        count += 1
+      end
+      count
+    end
+  end
 end
