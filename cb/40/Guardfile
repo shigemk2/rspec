@@ -1,10 +1,10 @@
-guard :rspec, :cli => "--color --format doc" do
+guard 'rspec',:cli => '--color --format doc', :all_after_pass => true, :all_on_start => true , :version => 2 do
   watch(%r{^bin/(.+)$})
   watch(%r{^spec/.+_spec\.rb$})          { |m| "spec/codebreaker/game_spec.rb" }
   watch( 'lib/codebreaker/game.rb' )     { |m| "spec/codebreaker/game_spec.rb" }
 end
 
-guard :cucumber do
+guard 'cucumber', :cli => '--color --format pretty' do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/step_definitions/.+\.rb$})
 end
