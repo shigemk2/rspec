@@ -11,12 +11,16 @@ module Codebreaker
     end
 
     def guess(guess)
-      if /\d+/.match(guess).nil?
+      if self.valid(guess).nil?
         @output.puts "The code #{guess} is not valid"
         return
       end
       marker = Marker.new(@secret, guess)
       @output.puts '+'*marker.exact_match_count + '-'*marker.number_match_count
+    end
+
+    def valid(guess)
+      return /\d+/.match(guess)
     end
   end
 end
