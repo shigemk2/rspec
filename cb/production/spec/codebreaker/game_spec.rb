@@ -25,5 +25,18 @@ module Codebreaker
         game.guess('1234')
       end
     end
+
+    describe "#validate" do
+      it "sends not number" do
+        game.start('1234')
+        output.should_receive(:puts).with('The code hoge is not valid')
+        game.guess('hoge')
+      end
+      it "sends empty string" do
+        game.start('1234')
+        output.should_receive(:puts).with('The code  is not valid')
+        game.guess('')
+      end
+    end
   end
 end
