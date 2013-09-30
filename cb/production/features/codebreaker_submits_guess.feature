@@ -21,6 +21,9 @@ Feature: code-breaker submits guess
     Scenarios: no matches
       | code | guess | mark |
       | 1234 | 5555  |      |
+      |      | 5555  |      |
+      | nil  | 5555  |      |
+      | hoge | 5555  |      |
 
     Scenarios: 1 number correct
       | code | guess | mark |
